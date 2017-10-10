@@ -35,6 +35,11 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest(`${paths.dist}/css`));
 });
 
+gulp.task('minify-images', () => {
+  return gulp.src(`${paths.assets.images}/**`)
+    .pipe(gulp.dest(`${paths.dist}/images`));
+});
+
 gulp.task('config', () => {
   return gulp.src(`${paths.config}/*.{js,json,ico}`)
     .pipe(gulp.dest(paths.dist));
@@ -56,6 +61,7 @@ gulp.task('default', [
   'del',
   'minify-js',
   'minify-css',
+  'minify-images',
   'generate-service-worker',
   'config'
 ]);
