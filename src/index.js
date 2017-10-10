@@ -1,7 +1,3 @@
-;(function () {
+'use strict';
 
-  'use strict';
-
-  document.querySelector('#title').innerHTML = 'PWA - Example'
-
-})();
+document.querySelector('#title').innerHTML = 'PWA - Example'
