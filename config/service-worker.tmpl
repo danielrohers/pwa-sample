@@ -3,6 +3,9 @@
 importScripts('/vendor/sw-toolbox/sw-toolbox.js');
 
 var precacheConfig = <%= precacheConfig %>;
+var cacheName = 'sw-precache-<%= version %>-<%= cacheId %>-' + (self.registration ? self.registration.scope : '');
+
+toolbox.cache.name = cacheName;
 
 toolbox.precache(precacheConfig.map(function (cache) { return cache[0] }))
 
