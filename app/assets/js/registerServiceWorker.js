@@ -89,7 +89,7 @@
   
   function registerValidSW(swUrl) {
     navigator.serviceWorker
-      .register(swUrl, { scope: '/' })
+      .register(swUrl)
       .then(registration => {        
         downloadApp();
         registration.onupdatefound = () => {
