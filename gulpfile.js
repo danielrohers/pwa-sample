@@ -38,10 +38,10 @@ gulp.task('config', () => {
 });
 
 gulp.task('generate-service-worker', (cb) => {
+  const rootDir = 'app/assets'
   swPrecache.write(`${paths.dist}/service-worker.js`, {
-    staticFileGlobs: ['/public/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefix: '/public',
-    replacePrefix: '/'
+    staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
+    stripPrefix: rootDir
   }, cb);
 });
 
