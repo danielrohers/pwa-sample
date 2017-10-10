@@ -32,7 +32,7 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('minify-html', () => {
-  return gulp.src(`${paths.src}/*/html`)
+  return gulp.src(`${paths.src}/*.html`)
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
