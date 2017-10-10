@@ -24,3 +24,9 @@ toolbox.router.get('/user', toolbox.cacheFirst, {
       name: 'pages',
   }
 });
+
+toolbox.router.get('/user/:name', toolbox.cacheFirst, {
+  cache: {
+      name: 'pages',
+  }
+});
