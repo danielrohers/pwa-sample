@@ -1,19 +1,25 @@
 {
   "name": "pwa-sample",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "deploy": "./bin/deploy"
+    "start": "npm run build && node ./bin/www",
+    "build": "gulp"
   },
-  "devDependencies": {
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
-    "gulp-htmlmin": "^3.0.0",
     "gulp-uglify": "^3.0.0",
     "sw-precache": "^5.2.0"
   }
