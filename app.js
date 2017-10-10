@@ -4,10 +4,14 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const helmet = require('helmet')
 
 const index = require('./app/routes/index');
 
 const app = express();
+
+app.use(helmet());
+app.disable('x-powered-by');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));

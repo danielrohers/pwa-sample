@@ -7,20 +7,21 @@
     "build": "gulp"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
     "del": "^3.0.0",
+    "express": "~4.15.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-uglify": "^3.0.0",
+    "helmet": "^3.8.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
     "sw-precache": "^5.2.0"
   }
 }
