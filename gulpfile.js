@@ -45,7 +45,8 @@ gulp.task('config', () => {
 gulp.task('generate-service-worker', (cb) => {
   swPrecache.write(`${paths.dist}/service-worker.js`, {
     staticFileGlobs: [paths.src + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefix: `${paths.src}/`
+    stripPrefix: paths.src,
+    replacePrefix: 'pwa-sample'
   }, cb);
 });
 
