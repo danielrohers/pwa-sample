@@ -1,0 +1,20 @@
+{
+  "name": "pwa-sample",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Daniel Röhers Moura <rohersmoura@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/danielrohers/pwa-sample",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sw-toolbox": "^3.6.1"
+  }
+}

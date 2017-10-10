@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && node ./bin/www",
-    "build": "gulp"
+    "build": "gulp && bower install"
   },
   "dependencies": {
     "babel-core": "^6.26.0",

@@ -33,7 +33,7 @@
     }
   
     window.addEventListener('load', () => {
-      const swUrl = '/service-worker.js';
+      const swUrl = '/js/service-worker.js';
   
       if (!isLocalhost) {
         // Is not local host. Just register service worker

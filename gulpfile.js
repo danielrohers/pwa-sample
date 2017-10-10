@@ -62,6 +62,6 @@ gulp.task('default', [
   'minify-js',
   'minify-css',
   'minify-images',
-  'generate-service-worker',
+  // 'generate-service-worker',
   'config'
 ]);
