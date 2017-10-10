@@ -46,7 +46,8 @@ gulp.task('generate-service-worker', (cb) => {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
     stripPrefix: rootDir,
     dynamicUrlToDependencies: {
-      '/': [getViewPath('layout'), getViewPath('index')]
+      '/': [getViewPath('layout'), getViewPath('index')],
+      '/user': [getViewPath('layout'), getViewPath('index')]
     }
   }, cb);
 });
