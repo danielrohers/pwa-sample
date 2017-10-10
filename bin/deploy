@@ -23,6 +23,7 @@ git push --force
 
 # Move back to previous branch.
 git checkout -
+yarn
 
 echo "Deployed Successfully!"
 
