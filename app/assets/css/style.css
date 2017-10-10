@@ -7,3 +7,7 @@ a {
   color: #00B7FF;
   display: block;
 }
+
+#download {
+  display: none;
+}

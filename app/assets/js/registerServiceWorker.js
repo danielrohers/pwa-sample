@@ -44,6 +44,48 @@
       }
     });
   }
+
+  function downloadApp() {
+    var deferredPrompt;
+
+    var btnDownload = document.querySelector('#download');
+
+    btnDownload.style.display = 'block';
+    
+    window.addEventListener('beforeinstallprompt', function(e) {
+      console.log('beforeinstallprompt Event fired');
+      e.preventDefault();
+    
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+    
+      return false;
+    });
+    
+    btnDownload.addEventListener('click', function() {
+      if(deferredPrompt) {
+        // The user has had a positive interaction with our app and Chrome
+        // has tried to prompt previously, so let's show the prompt.
+        deferredPrompt.prompt();
+    
+        // Follow what the user has done with the prompt.
+        deferredPrompt.userChoice.then(function(choiceResult) {
+    
+          console.log(choiceResult.outcome);
+    
+          if(choiceResult.outcome == 'dismissed') {
+            console.log('User cancelled home screen install');
+          }
+          else {
+            console.log('User added to home screen');
+          }
+    
+          // We no longer need the prompt.  Clear it up.
+          deferredPrompt = null;
+        });
+      }
+    });
+  }
   
   function registerValidSW(swUrl) {
     navigator.serviceWorker
@@ -53,6 +95,7 @@
           const installingWorker = registration.installing;
           installingWorker.onstatechange = () => {
             if (installingWorker.state === 'installed') {
+              downloadApp();
               if (navigator.serviceWorker.controller) {
                 // At this point, the old content will have been purged and
                 // the fresh content will have been added to the cache.
