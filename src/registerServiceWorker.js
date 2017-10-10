@@ -22,7 +22,7 @@
 
   if ('serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL('', window.location);
+    const publicUrl = new URL('/', window.location);
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
@@ -31,7 +31,7 @@
     }
 
     window.addEventListener('load', () => {
-      const swUrl = '/pwa-sample/service-worker.js';
+      const swUrl = '/service-worker.js';
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
