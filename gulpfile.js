@@ -12,8 +12,11 @@ const paths = {
     css: 'app/assets/css',
     images: 'app/assets/images'
   },
+  views: 'app/views',
   config: 'config'
 };
+
+const getViewPath = view => `${paths.views}/${view}.pug`;
 
 gulp.task('del', () => {
   return del.sync(paths.dist);
@@ -42,7 +45,9 @@ gulp.task('generate-service-worker', (cb) => {
   swPrecache.write(`${paths.dist}/service-worker.js`, {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
     stripPrefix: rootDir,
-    directoryIndex: '/'
+    dynamicUrlToDependencies: {
+      '/': [getViewPath('layout'), getViewPath('index')]
+    }
   }, cb);
 });
 
