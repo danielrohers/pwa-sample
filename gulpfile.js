@@ -33,7 +33,7 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('config', () => {
-  return gulp.src(`${paths.config}/*`)
+  return gulp.src(`${paths.config}/*.{js,json,ico}`)
     .pipe(gulp.dest(paths.dist));
 });
 
@@ -41,7 +41,8 @@ gulp.task('generate-service-worker', (cb) => {
   const rootDir = 'app/assets'
   swPrecache.write(`${paths.dist}/service-worker.js`, {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
-    stripPrefix: rootDir
+    stripPrefix: rootDir,
+    templateFilePath: `${paths.config}/service-worker.tmpl`
   }, cb);
 });
 
