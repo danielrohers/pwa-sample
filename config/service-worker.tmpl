@@ -1,4 +1,10 @@
+// https://github.com/GoogleChromeLabs/sw-precache/blob/master/service-worker.tmpl
+
 importScripts('/vendor/sw-toolbox/sw-toolbox.js');
+
+var precacheConfig = <%= precacheConfig %>;
+
+toolbox.precache(precacheConfig.map(function (cache) { return cache[0] }))
 
 toolbox.router.get('/css*', toolbox.cacheFirst);
 toolbox.router.get('/images*', toolbox.cacheFirst);

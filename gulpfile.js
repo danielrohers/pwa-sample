@@ -50,10 +50,7 @@ gulp.task('generate-service-worker', (cb) => {
   swPrecache.write(`${paths.dist}/service-worker.js`, {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
     stripPrefix: rootDir,
-    dynamicUrlToDependencies: {
-      '/': [getViewPath('layout'), getViewPath('index')],
-      '/user': [getViewPath('layout'), getViewPath('index')]
-    }
+    templateFilePath: `${paths.config}/service-worker.tmpl`
   }, cb);
 });
 
@@ -62,6 +59,6 @@ gulp.task('default', [
   'minify-js',
   'minify-css',
   'minify-images',
-  // 'generate-service-worker',
+  'generate-service-worker',
   'config'
 ]);
