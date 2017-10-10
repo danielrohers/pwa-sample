@@ -31,7 +31,7 @@
     }
 
     window.addEventListener('load', () => {
-      const swUrl = 'service-worker.js';
+      const swUrl = '/pwa-sample/service-worker.js';
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
