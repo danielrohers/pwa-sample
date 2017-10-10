@@ -25,9 +25,7 @@ gulp.task('minify-js', () => {
 
 gulp.task('minify-css', () => {
   return gulp.src(`${paths.src}/*.css`)
-    .pipe(cleanCSS({
-      compatibility: 'ie8'
-    }))
+    .pipe(cleanCSS())
     .pipe(gulp.dest(paths.dist));
 });
 
