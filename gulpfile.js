@@ -37,15 +37,8 @@ gulp.task('minify-html', () => {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('config-js', () => {
-  return gulp.src(`${paths.config}/*.js`)
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.dist));
-});
-
-gulp.task('config-json', () => {
-  return gulp.src(`${paths.config}/*.json`)
+gulp.task('config', () => {
+  return gulp.src(`${paths.config}/*`)
     .pipe(gulp.dest(paths.dist));
 });
 
@@ -62,6 +55,5 @@ gulp.task('default', [
   'minify-css',
   'minify-html',
   'generate-service-worker',
-  'config-js',
-  'config-json'
+  'config'
 ]);
