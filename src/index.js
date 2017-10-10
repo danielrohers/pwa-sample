@@ -1,3 +1,5 @@
-'use strict';
-
-document.querySelector('#title').innerHTML = 'PWA - Example'
+!(function () {
+  'use strict';
+  
+  document.querySelector('#title').innerHTML = 'PWA - Example'
+})();
