@@ -11,6 +11,7 @@ git checkout gh-pages
 git reset --hard master
 
 # Build site.
+npm install
 gulp
 
 mv dist/* .
