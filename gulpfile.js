@@ -51,7 +51,8 @@ gulp.task('generate-service-worker', (cb) => {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
     stripPrefix: rootDir,
     replacePrefix: '/static',
-    templateFilePath: `${paths.config}/service-worker.tmpl`
+    templateFilePath: `${paths.config}/service-worker.tmpl`,
+    verbose: true
   }, cb);
 });
 

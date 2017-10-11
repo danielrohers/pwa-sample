@@ -7,7 +7,7 @@ var cacheName = 'sw-precache-<%= version %>-<%= cacheId %>-' + (self.registratio
 
 toolbox.cache.name = cacheName;
 
-toolbox.precache(precacheConfig.map(function (cache) { return cache[0] }))
+toolbox.precache(precacheConfig.map(function (cache) { return cache[0] + '?v=' + cache[1] }))
 
 toolbox.router.get('/static/(.*)', toolbox.cacheFirst);
 
