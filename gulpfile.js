@@ -50,6 +50,7 @@ gulp.task('generate-service-worker', (cb) => {
   swPrecache.write(`${paths.dist}/service-worker.js`, {
     staticFileGlobs: [`${rootDir}/**/*.{js,css,png,jpg,gif,svg,eot,ttf,woff}`],
     stripPrefix: rootDir,
+    replacePrefix: '/static',
     templateFilePath: `${paths.config}/service-worker.tmpl`
   }, cb);
 });

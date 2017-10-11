@@ -33,7 +33,7 @@
     }
   
     window.addEventListener('load', () => {
-      const swUrl = '/service-worker.js';
+      const swUrl = '/static/service-worker.js';
   
       if (!isLocalhost) {
         // Is not local host. Just register service worker
@@ -91,7 +91,7 @@
     navigator.serviceWorker
       .register(swUrl)
       .then(registration => {        
-        downloadApp();
+        // downloadApp();
         registration.onupdatefound = () => {
           const installingWorker = registration.installing;
           installingWorker.onstatechange = () => {

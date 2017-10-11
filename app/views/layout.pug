@@ -2,24 +2,24 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="theme-color" content="#000000")
 
     meta(name="apple-mobile-web-app-capable" content="yes")
     meta(name="apple-mobile-web-app-status-bar-style" content="black")
     meta(name="apple-mobile-web-app-title" content="PWA - Sample")
-    link(rel="apple-touch-icon" href="/images/icon-192x192.png")
+    link(rel="apple-touch-icon" href="/static/images/icon-192x192.png")
 
-    meta(name="msapplication-TileImage" content="/images/icon-192x192.png")
+    meta(name="msapplication-TileImage" content="/static/images/icon-192x192.png")
     meta(name="msapplication-TileColor" content="#00B7FF")
     
     title= title
 
-    link(rel="manifest" href="/manifest.json")
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel="manifest" href="/static/manifest.json")
+    link(rel='stylesheet', href='/static/css/style.css')
   body
     block content
 
-    script(src="/vendor/sw-toolbox/sw-toolbox.js")
-    script(src='/js/registerServiceWorker.js')
-    script(src='/js/index.js')
+    //- script(src="/static/vendor/sw-toolbox/sw-toolbox.js")
+    script(src='/static/js/registerServiceWorker.js')
+    script(src='/static/js/index.js')

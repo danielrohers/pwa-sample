@@ -1,6 +1,6 @@
 // https://github.com/GoogleChromeLabs/sw-precache/blob/master/service-worker.tmpl
 
-importScripts('/vendor/sw-toolbox/sw-toolbox.js');
+importScripts('/static/vendor/sw-toolbox/sw-toolbox.js');
 
 var precacheConfig = <%= precacheConfig %>;
 var cacheName = 'sw-precache-<%= version %>-<%= cacheId %>-' + (self.registration ? self.registration.scope : '');
@@ -9,9 +9,7 @@ toolbox.cache.name = cacheName;
 
 toolbox.precache(precacheConfig.map(function (cache) { return cache[0] }))
 
-toolbox.router.get('/css*', toolbox.cacheFirst);
-toolbox.router.get('/images*', toolbox.cacheFirst);
-toolbox.router.get('/js*', toolbox.cacheFirst);
+toolbox.router.get('/static/(.*)', toolbox.cacheFirst);
 
 toolbox.router.get('/', toolbox.cacheFirst, {
   cache: {
